@@ -1,25 +1,38 @@
 import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './stylesheet.css'
+import Home from './Components/Home/Home.js'
+import Main from './Components/Main/Main.js'
+import AddNotes from './Components/AddNote/AddNotes';
+import { Routes, Route } from 'react-router-dom'
+import Body from './Components/Main/AllNotes';
+import { UserAuthContextProvider } from './Context/UserAuthContext';
+import ProtectedRoute from './Components/ProtectedRoute';
+import { NotesContextProvider } from './Context/NotesContext'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserAuthContextProvider>
+        <NotesContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/main" element={
+              <ProtectedRoute>
+                <Main />
+              </ProtectedRoute>
+            } />
+            <Route path="addnotes" element={
+              <ProtectedRoute>
+                <AddNotes />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </NotesContextProvider>
+      </UserAuthContextProvider>
     </div>
   );
+  // <Route path="allnotes" element={<Body />} />
 }
 
 export default App;
