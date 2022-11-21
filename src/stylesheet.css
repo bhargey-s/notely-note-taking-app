@@ -1,8 +1,12 @@
 /* @import url(//db.onlinewebfonts.com/c/9b06ae83a4412168ed194a8ed31218c2?family=Mabry+Pro+Medium); */
-@import url(//db.onlinewebfonts.com/c/e4397c6cf12af9f58d46e124d18d6d93?family=Mabry+Pro);
+/* @import url(https://db.onlinewebfonts.com/c/e4397c6cf12af9f58d46e124d18d6d93?family=Mabry+Pro); */
 @import url(https://fonts.googleapis.com/css?family=Indie+Flower:regular);
 @import url(https://fonts.googleapis.com/css2?family=Indie+Flower&family=Open+Sans:wght@800&display=swap);
 @import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap');
+@font-face {
+    font-family: 'Mabry Pro';
+    src: url(./assets/Mabry-Pro/Mabry\ Pro.otf);
+}
 
 
 * {
